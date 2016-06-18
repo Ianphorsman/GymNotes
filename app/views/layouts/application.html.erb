@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WorkoutTracker</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/css?family=Raleway:400,100,200,300,500,700,800,900" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1", maximum-scale="1">
+    <%= csrf_meta_tags %>
+    <%= yield :script_event %>
+  </head>
+  <body>
+      <%= react_component 'App',
+                          :userSession => signed_in?,
+                          :forMobile => mobile_device?,
+                          :month => Date.today.strftime("%B"),
+                          :date => Date.today.to_s,
+                          :exercises => @exercises,
+                          :workoutData => @workout,
+                          :datePickerData => @dates,
+                          :user => @user_data
+      %>
+      <div class="plot"><canvas id="plot-container" width="" height=""></canvas></div>
+      <%= yield :body %>
+  </body>
+</html>

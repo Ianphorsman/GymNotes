@@ -1,0 +1,349 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* colors */
+
+$honey: #d9bf2b;
+$cranberry: #d92b4b;
+$olive-green: #607625;
+$midnight-blue: #036;
+$pumpkin: #d96e2b;
+$grape: #613cb3;
+$spring-green: #a2c83c;
+$wafer: #e1d7d2;
+$yellow: #b7b327;
+$skyblue: #5db1e9;
+$storm-blue: #255c76;
+
+
+
+/* lists */
+
+.panel, .panel-heading, .list-group-item, .panel-title, .panel-body {
+  background-color: transparent !important;
+  border: none;
+  outline: none;
+}
+.panel-title {
+  a {
+    text-decoration: none;
+  }
+}
+.panel-body {
+  border-top-color: transparent !important;
+}
+
+.list-group-item {
+  [data-set-action] {
+    visibility: hidden;
+  }
+  &:hover {
+    [data-set-action] {
+      visibility: visible;
+    }
+  }
+}
+
+#stats-form {
+  li {
+    background-color: $cranberry;
+    input {
+      position: absolute;
+      right: 0;
+      background-color: $midnight-blue;
+    }
+  }
+}
+/* theme */
+
+body {
+  margin: 0px 10%;
+  background-color: lighten(black, 10%);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+i {
+  color: $cranberry;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  span, i {
+    color: $cranberry;
+    text-shadow: none;
+  }
+}
+.grey {
+  color: $gray-dark;
+  font-size: 0.8em;
+}
+.workout-component {
+  margin-top: 1em;
+}
+/* navbar */
+
+.navbar {
+  color: $wafer;
+}
+
+header {
+  height: 50px;
+}
+
+/* modal */
+
+.modal-content {
+  background-color: lighten(black, 10%);
+  color: $wafer;
+}
+.modal-header {
+  border-bottom-color: black;
+  color: $wafer;
+}
+
+.modal-footer {
+  border-top-color: black;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+/* tables */
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  thead {
+    th {
+      text-align: center;
+      padding: 1em;
+    }
+  }
+  td {
+    padding: 0.5em 0;
+    cursor: pointer;
+  }
+}
+
+/* forms */
+
+select {
+  padding: 0;
+  -webkit-border-radius: 0px !important;
+}
+
+.form-group {
+  margin: 0 !important;
+  padding: 0 !important;
+  //min-height: 0 !important;
+}
+.form-control {
+  width: 100%;
+  box-shadow: inset 0 0 5px darken($gray-dark, 10%);
+  //-webkit-appearance: none;
+  background-color: $gray-dark;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  color: $cranberry !important;
+  border-radius: 0px;
+  text-indent: 0.25em;
+  &:focus {
+    box-shadow: inset 0 0 3px $cranberry;
+  }
+}
+
+input:-webkit-autofill {
+  background-color: $gray-dark !important;
+  color: $cranberry !important;
+}
+
+::-webkit-input-placeholder {
+  color: $cranberry !important;
+}
+.set-count {
+  position: absolute;
+  right: 0;
+}
+/* progress bar */
+
+.progress {
+  background-color: $gray-dark;
+  padding: 0;
+  height: 30px;
+  box-shadow: inset 0 0 3px darken($gray-dark, 5%);
+  span {
+    background-color: transparent;
+    color: $wafer;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  h5 {
+    color: $wafer;
+    font-weight: bold;
+    text-indent: 1em;
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+  }
+  .divider {
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    background-color: transparent;
+    box-shadow: 0 0 5px 1px darken($gray-dark, 10%);
+    left: 71%;
+    opacity: 1;
+  }
+  .date {
+    position: absolute;
+    right: 30%;
+    color: $wafer;
+  }
+}
+.progress-bar {
+  text-align: left;
+  box-shadow: inset 0 0 3px darken($gray-dark, 5%);
+}
+/* colors */
+
+.today {
+  background-color: lighten(transparentize($gray-darker, 0.5), 10%);
+  font-weight: bold;
+  border-radius: 5px;
+}
+.past {
+  background-color: transparentize($gray-darker, 0.5);
+}
+.future {
+  background-color: transparentize($gray-darker, 0.5);
+}
+
+[data-muscle-group="Abs"] {
+  color: $honey !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $honey;
+    }
+  }
+  a {
+    color: $honey !important;
+  }
+  &.progress-bar {
+    background-color: $honey !important;
+  }
+}
+[data-muscle-group="Arms"] {
+  color: $olive-green !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $olive-green;
+    }
+  }
+  a {
+    color: $olive-green !important;
+  }
+  &.progress-bar {
+    background-color: $olive-green !important;
+  }
+}
+[data-muscle-group="Legs"] {
+  color: $midnight-blue !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $midnight-blue;
+    }
+  }
+  a {
+    color: $midnight-blue !important;
+  }
+  &.progress-bar {
+    background-color: $midnight-blue !important;
+  }
+}
+[data-muscle-group="Chest"] {
+  color: $pumpkin !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $pumpkin;
+    }
+  }
+  a {
+    color: $pumpkin !important;
+  }
+  &.progress-bar {
+    background-color: $pumpkin !important;
+  }
+}
+[data-muscle-group="Back"] {
+  color: $grape !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $grape;
+    }
+  }
+  a {
+    color: $grape !important;
+  }
+  &.progress-bar {
+    background-color: $grape !important;
+  }
+}
+[data-muscle-group="Shoulders"] {
+  color: $spring-green !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $spring-green;
+    }
+  }
+  a {
+    color: $spring-green !important;
+  }
+  &.progress-bar {
+    background-color: $spring-green !important;
+  }
+}
+[data-muscle-group="Glutes"] {
+  color: $cranberry !important;
+  &.set, i {
+    color: $gray-dark;
+    &:hover {
+      color: $cranberry;
+    }
+  }
+  a {
+    color: $cranberry !important;
+  }
+  &.progress-bar {
+    background-color: $cranberry !important;
+  }
+}
+[data-muscle-group="None"] {
+  color: $gray-dark;
+}

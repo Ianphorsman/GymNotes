@@ -7,11 +7,26 @@ Things you may want to cover:
 
 * Ruby version
 
+    ruby 2.2.2p95
+
 * System dependencies
+
+    postgres (PostgreSQL) 9.4.4
+
 
 * Configuration
 
+    bundle install
+
+
 * Database creation
+
+    rake db:create
+    rake db:migrate
+
+    Go into the seeds.rb file to configure defaults, then
+    rake db:seed RAILS_ENV=production
+
 
 * Database initialization
 

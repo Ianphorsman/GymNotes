@@ -11,9 +11,9 @@ module SeedLibrary
                        })
   end
 
-  def self.mock_workouts_for email
+  def self.mock_workouts_for email, x
     user = User.find_by_email(email)
-    start_date = Date.today.days_ago(10)
+    start_date = Date.today.days_ago(x)
     until start_date > Date.today
       workout = user.workouts.create({
                                          :day => start_date
@@ -82,7 +82,7 @@ module SeedLibrary
 
   def self.color_code exercise_color_pair={}
     exercise_color_pair.each do |exercise, color|
-      Exercise.where(primary_muscle_group: exercise).each do |ex|
+      Exercise.where(muscle_category: exercise).each do |ex|
         ex.color = color
         ex.save
       end

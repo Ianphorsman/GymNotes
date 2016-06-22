@@ -17,8 +17,9 @@ class ExerciseSetsController < ApplicationController
     exercise = Exercise.find_by_name(params[:name])
     workout = user.workouts.find_by_day(Date.today)
     exercise_set = workout.exercise_sets.new({
-        :reps => params[:reps],
-        :weight => params[:weight],
+        :reps => params[:reps].to_f.round.to_i,
+        :weight => params[:weight].to_f.round.to_i,
+        :duration => params[:duration].to_f.round.to_i,
         :name => params[:name],
         :user_id => user.id,
         :exercise_id => exercise.id,

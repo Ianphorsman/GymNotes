@@ -145,6 +145,7 @@ var App = React.createClass({
             "name": $('#exercise_name').val(),
             "reps": $('#reps').val(),
             "weight": $('#weight').val(),
+            "duration": $('#duration').text(),
             "day": this.props.date
         };
 

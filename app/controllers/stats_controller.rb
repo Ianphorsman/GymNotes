@@ -11,14 +11,6 @@ class StatsController < ApplicationController
     end
   end
 
-  def breakdown
-    user = User.find_by_id(current_user.id)
-    stats = user.volume_breakdown(params[:days_ago])
-    respond_to do |format|
-      format.json { render :json => { :head => "Success" }}
-    end
-  end
-
   def show_volume_timeline_by_workouts
     user = User.find_by_id(current_user.id)
     stats = user.volume_timeline_by_workouts(params[:days_ago].to_i)

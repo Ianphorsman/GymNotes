@@ -1,52 +1,49 @@
 var StatsContainer = React.createClass({
 
+    lightenDarkenColor: function(col, amt) {
+        var usePound = false;
 
+        if (col[0] == "#") {
+            col = col.slice(1);
+            usePound = true;
+        }
+
+        var num = parseInt(col,16);
+
+        var r = (num >> 16) + amt;
+
+        if (r > 255) r = 255;
+        else if  (r < 0) r = 0;
+
+        var b = ((num >> 8) & 0x00FF) + amt;
+
+        if (b > 255) b = 255;
+        else if  (b < 0) b = 0;
+
+        var g = (num & 0x0000FF) + amt;
+
+        if (g > 255) g = 255;
+        else if (g < 0) g = 0;
+
+        return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
+    },
+
+    dates: function(day) {
+        return <li className="list-group-item">{day.date}<span className="badge">{day.volume}</span></li>
+    },
+
+    makeList: function() {
+        return(
+            <ul className="list-group">
+                {this.props.stats.stats.map(dates)}
+            </ul>
+        );
+    },
 
   render: function() {
       if (this.props.stats == null || this.props.show == false) {
           return null;
       } else {
-
-          var lightenDarkenColor = function(col, amt) {
-
-              var usePound = false;
-
-              if (col[0] == "#") {
-                  col = col.slice(1);
-                  usePound = true;
-              }
-
-              var num = parseInt(col,16);
-
-              var r = (num >> 16) + amt;
-
-              if (r > 255) r = 255;
-              else if  (r < 0) r = 0;
-
-              var b = ((num >> 8) & 0x00FF) + amt;
-
-              if (b > 255) b = 255;
-              else if  (b < 0) b = 0;
-
-              var g = (num & 0x0000FF) + amt;
-
-              if (g > 255) g = 255;
-              else if (g < 0) g = 0;
-
-              return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
-
-          };
-          var dates = (day) => {
-              return <li className="list-group-item">{day.date}<span className="badge">{day.volume}</span></li>
-          };
-
-          var makeList = function() {
-              return(
-                  <ul className="list-group">
-                      {this.props.stats.stats.map(dates)}
-                  </ul>
-              );
-          };
 
           var dataPoints = (dataPoint) => {
               return {
@@ -74,11 +71,11 @@ var StatsContainer = React.createClass({
                   {
                       fill: true,
                       label: this.props.stats.attributes.best_fit,
-                      backgroundColor: lightenDarkenColor(this.props.stats.attributes.theme_color, 10),
-                      pointBackgroundColor: lightenDarkenColor(this.props.stats.attributes.theme_color, -30),
+                      backgroundColor: this.lightenDarkenColor(this.props.stats.attributes.theme_color, 10),
+                      pointBackgroundColor: this.lightenDarkenColor(this.props.stats.attributes.theme_color, -30),
                       borderWidth: 3,
-                      borderColor: lightenDarkenColor(this.props.stats.attributes.theme_color, -30),
-                      pointBorderColor: lightenDarkenColor(this.props.stats.attributes.theme_color, -30),
+                      borderColor: this.lightenDarkenColor(this.props.stats.attributes.theme_color, -30),
+                      pointBorderColor: this.lightenDarkenColor(this.props.stats.attributes.theme_color, -30),
                       data: data.map(yValues)
                   }
               ]

@@ -138,6 +138,33 @@ class User < ActiveRecord::Base
     muscle_categories.sort_by { |key, value| value}
   end
 
+  def volume_breakdown days_ago
+    muscle_categories = {}
+    self.exercise_sets.where("day > ?", Date.today.days_ago(days_ago)).each do |es|
+      category = es.muscle_category
+      if muscle_categories[category]
+        muscle_categories[category] += es.volume
+      else
+        muscle_categories[category] = es.volume
+      end
+    end
+    muscle_categories.sort_by { |key, value| value}.map { |pair| pair << Exercise.where(muscle_category: pair[0]).first.color }
+  end
+
+  def strength_breakdown days_ago
+    muscle_categories = {}
+    self.exercise_sets.where("day > ?", Date.today.days_ago(days_ago)).each do |es|
+      category = es.muscle_category
+      if muscle_categories[category]
+        muscle_categories[category] << es.strength
+      else
+        muscle_categories[category] = [es.strength]
+      end
+    end
+    muscle_categories.each { |key, value| value = value.inject(&:+) / value.length }
+    muscle_categories.sort_by { |key, value| value}.map { |pair| pair << Exercise.where(muscle_category: pair[0]).first.color }
+  end
+
   def strength_timeline_for_muscle_group muscle_group
     self.workouts.map do |w|
       {

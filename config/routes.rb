@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   post '/exercise_sets/create' => 'exercise_sets#create'
 
   get '/stats/show_all' => 'stats#show_all'
-  get '/stats/show_volume_timeline_by_breakdown/:days_ago' => 'stats#breakdown'
+  get '/stats/show_volume_timeline_by_breakdown/:days_ago' => 'stats#show_volume_timeline_by_breakdown'
+  get '/stats/show_strength_timeline_by_breakdown/:days_ago' => 'stats#show_strength_timeline_by_breakdown'
   get '/stats/show_volume_timeline_by_workouts/:days_ago' => 'stats#show_volume_timeline_by_workouts'
   get '/stats/show_strength_timeline_by_workouts/:days_ago' => 'stats#show_strength_timeline_by_workouts'
   get '/stats/show_volume_timeline_by_muscle_group/:muscle_group' => 'stats#show_volume_timeline_by_muscle_group'

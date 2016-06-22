@@ -34,25 +34,6 @@ var StatsForm = React.createClass({
         );
     },
 
-    breakdown: function() {
-        return(
-            <div className="row">
-                <label className="form-group col-xs-6"><span className="form-control">How many days back to analyze?</span></label>
-                <div className="form-group col-xs-2">
-                    <input className="form-control" id="workouts" type="text" name="breakdown" placeholder="7" defaultValue="7" />
-                </div>
-                <div className="form-group col-xs-2">
-                    <select id="volume_strength" className="form-control">
-                        <option value="volume">Volume</option>
-                    </select>
-                </div>
-                <div className="form-group col-xs-2">
-                    <button className="form-control" type="button" onClick={this.props.requestStats.bind(this, this.getRoute.bind(this))}>Analyze</button>
-                </div>
-            </div>
-        );
-    },
-
     muscle_group: function() {
         return(
             <div className="row">
@@ -161,7 +142,6 @@ var StatsForm = React.createClass({
                 <div className="form-group col-xs-12">
                     <select className="form-control" id="stats_category" name="stats_category" defaultValue={this.props.context} onChange={this.changeFormContext.bind(this)}>
                         <option value="decide">Analyze by...</option>
-                        <option value="breakdown">Breakdown</option>
                         <option value="workouts">Workouts</option>
                         <option value="muscle_group">Muscle Group</option>
                         <option value="muscle_category">Muscle Category</option>

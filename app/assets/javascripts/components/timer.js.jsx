@@ -8,10 +8,12 @@ var Timer = React.createClass({
 
     render: function() {
         return(
-            <p className="form-control">
-                {this.props.display()}
-                <span id="duration">{this.time()}</span>
-            </p>
+            <div className="form-control">
+                <div className="row">
+                    {this.props.display()}
+                    <p id="duration" className="col-xs-6">{this.time()}</p>
+                </div>
+            </div>
         );
     }
 

@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c427522a-ccae-41a2-b1bf-215c0a43c7ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/app.js.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/app.js.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/exercise_list.js.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/exercise_list.js.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/modal_container.js.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/modal_container.js.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/workout_container.js.jsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/workout_container.js.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/exercise.rb" afterPath="$PROJECT_DIR$/app/models/exercise.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/SeedLibrary.rb" afterPath="$PROJECT_DIR$/db/SeedLibrary.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="GymNotes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modal_container.js.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modal_container.js.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/modal_container.js.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="319">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -84,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="357" column="21" selection-start-line="357" selection-start-column="21" selection-end-line="357" selection-end-column="21" />
+            <state relative-caret-position="370">
+              <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -146,13 +138,13 @@
         <option value="$PROJECT_DIR$/db/SeedLibrary.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/components/exercise_list.js.jsx" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/components/workout_container.js.jsx" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/components/app.js.jsx" />
         <option value="$PROJECT_DIR$/app/models/exercise.rb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/components/exercise_selection.js.jsx" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/components/modal_container.js.jsx" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
       </list>
     </option>
   </component>
@@ -687,12 +679,12 @@
       <workItem from="1466544875274" duration="382000" />
       <workItem from="1466546252089" duration="3527000" />
       <workItem from="1466620716324" duration="15775000" />
-      <workItem from="1466639537336" duration="7447000" />
+      <workItem from="1466639537336" duration="7997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304329000" />
+    <option name="totallyTimeSpent" value="304879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1649" height="915" extended-state="0" />
@@ -977,14 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="357" column="21" selection-start-line="357" selection-start-column="21" selection-end-line="357" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1099,8 +1083,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/components/modal_container.js.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="319">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
           <folding />
         </state>
       </provider>

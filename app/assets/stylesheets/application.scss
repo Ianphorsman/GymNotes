@@ -63,7 +63,7 @@ body {
   font-weight: 500;
 }
 
-a {
+a, .list-group-item {
   text-decoration: none;
   outline: none;
   &:hover {

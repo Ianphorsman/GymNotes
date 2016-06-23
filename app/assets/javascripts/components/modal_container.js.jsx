@@ -44,16 +44,16 @@ var ModalContainer = React.createClass({
 
     narrowSelection: function(target) {
         var exercise = $('#' + target).val();
-        this.setState({ pattern: new RegExp(exercise) }, function() {
-            this.setState({ exerciseList: this.props.exercises.map(this.matchWith) });
+        this.setState({ pattern: new RegExp(exercise, 'i') }, function() {
+            this.setState({ exerciseList: this.props.exercises.filter(this.matchWith) });
         });
     },
 
     matchWith: function(exercise) {
         if (exercise.match(this.state.pattern) == null) {
-            return null;
+            return false;
         } else {
-            return exercise;
+            return true;
         }
     },
 

@@ -42,19 +42,15 @@ var ModalContainer = React.createClass({
         return <StatsForm context={this.props.statsFormContext} changeStatsFormContext={this.props.changeStatsFormContext} exercises={this.props.exercises} requestStats={this.props.requestStats}></StatsForm>
     },
 
-    narrowSelection: function(target) {
-        var exercise = $('#' + target).val();
-        this.setState({ pattern: new RegExp(exercise, 'i') }, function() {
-            this.setState({ exerciseList: this.props.exercises.filter(this.matchWith) });
-        });
+    narrowSelection: function(event) {
+        var exercise = event.target.value.toLowerCase();
+        this.setState({ exerciseList: this.filterBy(exercise) })
     },
 
-    matchWith: function(exercise) {
-        if (exercise.match(this.state.pattern) == null) {
-            return false;
-        } else {
-            return true;
-        }
+    filterBy: function(query) {
+        return this.props.exercises.filter(function(exercise) {
+            return exercise.toLowerCase().indexOf(query) !== -1
+        })
     },
 
     getInitialState: function() {

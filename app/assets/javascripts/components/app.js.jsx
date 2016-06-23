@@ -52,6 +52,8 @@ var App = React.createClass({
             return "Pick a Date";
         } else if (component == "getStatsForm") {
             return "Statistics";
+        } else if (component == "getExerciseSelection") {
+            return "Select an exercise...";
         } else {
             return "Form";
         }
@@ -142,7 +144,7 @@ var App = React.createClass({
         };
         var params = {
             "utf8": "checked",
-            "name": $('#exercise_name').val(),
+            "name": $('#exercise_name').text(),
             "reps": $('#reps').val(),
             "weight": $('#weight').val(),
             "duration": $('#duration').text(),
@@ -209,6 +211,11 @@ var App = React.createClass({
 
     editable: function() {
         return (this.presentable() && (this.props.date == this.state.workoutData['workout']['day']));
+    },
+
+    selectExercise: function(exercise) {
+        this.closeModal();
+        $('#exercise_name').text(exercise);
     },
 
     renderToModal: function() {
@@ -332,6 +339,7 @@ var App = React.createClass({
                     modalData={this.state.modalData}
                     showModal={this.state.showModal}
                     errors={this.state.errors}
+                    selectExercise={this.selectExercise}
                     handleClose={this.closeModal}>
 
                 </ModalContainer>
@@ -351,6 +359,7 @@ var App = React.createClass({
                     fillable={this.fillable}
                     presentable={this.presentable}
                     editable={this.editable}
+                    setModalComponent={this.setModalComponent}
                     workoutData={this.state.workoutData}>
                 </WorkoutContainer>
                 <StatsContainer

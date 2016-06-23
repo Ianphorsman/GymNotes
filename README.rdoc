@@ -1,9 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 * Ruby version
 
@@ -17,6 +13,7 @@ Things you may want to cover:
 * Configuration
 
     bundle install
+    set RAILS_ENV = production
 
 
 * Database creation
@@ -25,18 +22,8 @@ Things you may want to cover:
     rake db:migrate
 
     Go into the seeds.rb file to configure defaults, then
-    rake db:seed RAILS_ENV=production
+    rake db:seed
 
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run

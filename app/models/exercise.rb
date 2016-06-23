@@ -7,15 +7,7 @@ class Exercise < ActiveRecord::Base
   end
 
   def self.list
-    exercise_list = {}
-    Exercise.all.each do |exercise|
-      if exercise_list[exercise[:primary_muscle_group]]
-        exercise_list[exercise[:primary_muscle_group]] << exercise[:name]
-      else
-        exercise_list[exercise[:primary_muscle_group]] = [exercise[:name]]
-      end
-    end
-    exercise_list.sort_by { |k, v| k }.to_h
+    Exercise.all.map(&:name).sort
   end
 
   def self.list_for user_id
@@ -24,13 +16,14 @@ class Exercise < ActiveRecord::Base
     Exercise.all.map do |e|
       exercises[e.name] = {
           :count => 0,
-          :muscle_group => e.primary_muscle_group
+          :muscle_group => e.muscle_category
       }
     end
     user.exercise_sets.each do |es|
       exercises[es.name][:count] += 1
     end
     exercise_list = {}
+    exercise_list["Performed"] = user.exercise_sets.map(&:name).uniq.sort
     exercises.sort_by { |k, v| [v[:muscle_group], -v[:count]] }.each do |e|
       if exercise_list[e[1][:muscle_group]]
         exercise_list[e[1][:muscle_group]] << e[0]

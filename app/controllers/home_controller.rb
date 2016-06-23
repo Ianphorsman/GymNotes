@@ -3,11 +3,7 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :date_picker, :helloworld]
 
   def index
-    if signed_in?
-      @exercises = Exercise.list_for current_user
-    else
-      @exercises = Exercise.list
-    end
+    @exercises = Exercise.list
     @workout = {
         :head => "Success",
         :workout => {},
@@ -41,17 +37,6 @@ class HomeController < ApplicationController
             :nextMonth => date.next_month.strftime("%B")
         }
       end
-    end
-  end
-
-  def helloworld
-    message = {
-        :title => "Hello",
-        :body => "World",
-        :footer => "."
-    }
-    respond_to do |format|
-      format.json { render :json => message }
     end
   end
 

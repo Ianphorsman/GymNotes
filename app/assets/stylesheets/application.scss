@@ -350,6 +350,18 @@ input:-webkit-autofill {
     background-color: $cranberry !important;
   }
 }
+[data-muscle-group="Performed"] {
+  color: $skyblue !important;
+  &.set, i {
+    color: $skyblue;
+    &:hover {
+      color: $skyblue;
+    }
+  }
+  a {
+    color: $skyblue !important;
+  }
+}
 [data-muscle-group="None"] {
   color: $gray-dark;
 }

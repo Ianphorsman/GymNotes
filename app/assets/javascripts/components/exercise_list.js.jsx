@@ -1,17 +1,6 @@
 var ExerciseList = React.createClass({
 
   render: function() {
-      var listExercises = (exercise) => {
-          return <option value={exercise}>{exercise}</option>
-      };
-
-      var listMuscleGroups = (muscleGroup) => {
-          return (
-              <optgroup label={muscleGroup}>
-                  {this.props.exercises[muscleGroup].map(listExercises)}
-              </optgroup>
-          );
-      };
 
       if (this.props.editable()) {
           if (this.props.forMobile) {
@@ -44,10 +33,7 @@ var ExerciseList = React.createClass({
                         action="/exercise_sets/create" method="POST">
                       <div className="col-xs-1 col-xs-offset-1"></div>
                       <div className="form-group col-xs-4">
-                          <select id="exercise_name" name="exercise_name" className="form-control">
-                              <option value>Select An Exercise...</option>
-                              {Object.keys(this.props.exercises).map(listMuscleGroups)}
-                          </select>
+                          <button id="exercise_name" type="button" className="form-control" onClick={this.props.setModalComponent.bind(this, 'getExerciseSelection')}>Select an exercise...</button>
                       </div>
                       <div className="form-group col-xs-1">
                           <input className="form-control" id="reps" type="text" name="reps" placeholder="Reps"/>

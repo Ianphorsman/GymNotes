@@ -66,14 +66,14 @@ var WorkoutContainer = React.createClass({
     },
 
     newSet: function() {
-        return <ExerciseList forMobile={this.props.forMobile} editable={this.props.editable} exercises={this.props.exercises} addExerciseSet={this.props.addExerciseSet}></ExerciseList>
+        return <ExerciseList forMobile={this.props.forMobile} editable={this.props.editable} exercises={this.props.exercises} setModalComponent={this.props.setModalComponent} addExerciseSet={this.props.addExerciseSet}></ExerciseList>
     },
 
   render: function() {
       if (this.props.presentable() && this.props.show) {
           var exerciseSet = (exSet) => {
               return(
-                  <ExerciseSet forMobile={this.props.forMobile} editable={this.props.editable} es={exSet} deleteSet={this.props.deleteSet}>
+                  <ExerciseSet forMobile={this.props.forMobile} editable={this.props.editable} selectExercise={this.props.selectExercise} es={exSet} deleteSet={this.props.deleteSet}>
 
                   </ExerciseSet>
               );

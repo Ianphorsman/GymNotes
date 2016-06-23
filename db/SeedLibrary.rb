@@ -39,6 +39,7 @@ module SeedLibrary
                                               name: exercise.name,
                                               reps: (rand(10) + 1),
                                               weight: (rand(100) + 10),
+                                              duration: 0
 
                                           })
       end

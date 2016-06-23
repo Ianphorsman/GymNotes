@@ -7,7 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require_relative 'SeedLibrary'
 
-
+SeedLibrary.clear_seeds
+#User.create({ :email => 'ianphorsman@gmail.com', :password => 'herpderp' })
+SeedLibrary.mock_workouts_for('ianphorsman@gmail.com', 3)
 # Deletes all rows from the Users, ExerciseSets, and Workouts table, but keeps the Exercise rows.
 <<-eof
 

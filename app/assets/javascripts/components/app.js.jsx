@@ -326,6 +326,7 @@ var App = React.createClass({
                     statsFormContext={this.state.statsFormContext}
                     changeStatsFormContext={this.changeStatsFormContext}
                     exercises={this.props.exercises}
+                    setModalComponent={this.setModalComponent}
                     datePickerContext={this.state.datePickerContext}
                     prevMonth={this.prevMonth}
                     nextMonth={this.nextMonth}

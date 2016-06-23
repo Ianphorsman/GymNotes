@@ -39,7 +39,7 @@ var ModalContainer = React.createClass({
     },
 
     getStatsForm: function() {
-        return <StatsForm context={this.props.statsFormContext} changeStatsFormContext={this.props.changeStatsFormContext} exercises={this.props.exercises} requestStats={this.props.requestStats}></StatsForm>
+        return <StatsForm context={this.props.statsFormContext} setModalComponent={this.props.setModalComponent} selectExercise={this.props.selectExercise} narrowSelection={this.narrowSelection} changeStatsFormContext={this.props.changeStatsFormContext} exercises={this.state.exerciseList} requestStats={this.props.requestStats}></StatsForm>
     },
 
     narrowSelection: function(event) {

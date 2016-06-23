@@ -101,24 +101,17 @@ var StatsForm = React.createClass({
     },
 
     exercise: function() {
-        var listExercises = (exercise) => {
-            return <option value={exercise}>{exercise}</option>
-        };
-
-        var listMuscleGroups = (muscleGroup) => {
-            return (
-                <optgroup label={muscleGroup}>
-                    {this.props.exercises[muscleGroup].map(listExercises)}
-                </optgroup>
-            );
-        };
         return(
             <div className="row">
-                <div className="form-group col-xs-8">
-                    <select className="form-control" id="exercise" name="exercise" className="form-control">
-                        <option value>Select an Exercise...</option>
-                        {Object.keys(this.props.exercises).map(listMuscleGroups)}
-                    </select>
+                <div className="col-xs-8">
+                    <div className="row">
+                        <div className="form-group col-xs-6">
+                            <ExerciseSelection exercises={this.props.exercises} narrowSelection={this.props.narrowSelection} selectExercise={this.selectExercise}></ExerciseSelection>
+                        </div>
+                        <div className="form-group col-xs-6">
+                            <input id="exercise" className="form-control"></input>
+                        </div>
+                    </div>
                 </div>
                 <div className="form-group col-xs-2">
                     <select className="form-control" name="volume_strength" id="volume_strength">
@@ -131,6 +124,10 @@ var StatsForm = React.createClass({
                 </div>
             </div>
         );
+    },
+
+    selectExercise: function(exercise) {
+        $('#exercise').val(exercise);
     },
 
 

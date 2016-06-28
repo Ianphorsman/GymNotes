@@ -114,7 +114,7 @@ class User < ActiveRecord::Base
           :total_sets => pair[1].count,
           :total_volume => pair[1].map(&:volume).inject(&:+),
           :total_reps => pair[1].map(&:reps).inject(&:+),
-          :average_strength => (pair[1].map(&:volume).inject(&:+) / pair[1].map(&:reps).inject(&:+)).round,
+          :average_strength => (pair[1].map(&:volume).inject(&:+) / (pair[1].map(&:reps).inject(&:+)+0.1)).round,
           :color => Exercise.where(muscle_category: pair[0]).first.color
       }
     end
@@ -171,7 +171,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :strength => w.strength_of_muscle_group(muscle_group)
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
   def strength_timeline_for_muscle_category muscle_category
@@ -189,7 +189,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :strength => w.strength_of_exercise(exercise)
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
   def strength_timeline_by_workouts days_ago
@@ -198,7 +198,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :strength => w.average_strength
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
   def volume_timeline_by_workouts days_ago
@@ -207,7 +207,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :volume => w.total_volume
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
   def volume_timeline_for_muscle_group muscle_group
@@ -216,7 +216,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :volume => w.volume_for_muscle_group(muscle_group)
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
   def volume_timeline_for_muscle_category muscle_category
@@ -225,7 +225,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :volume => w.volume_for_muscle_category(muscle_category)
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
   def volume_timeline_for_exercise exercise
@@ -234,7 +234,7 @@ class User < ActiveRecord::Base
           :date => w.day,
           :volume => w.volume_for_exercise(exercise)
       }
-    end
+    end.sort_by { |v| v[:date] }
   end
 
 end

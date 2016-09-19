@@ -63,6 +63,7 @@ var App = React.createClass({
         var handler = function(data) {
             this.setState({ userAuthenticated: true, user: data.user });
             this.closeModal();
+            this.fetchDates();
         };
 
         var errorHandler = function(data) {

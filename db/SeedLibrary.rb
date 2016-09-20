@@ -14,17 +14,20 @@ module SeedLibrary
   def self.mock_workouts_for email, x
     user = User.find_by_email(email)
     start_date = Date.today.days_ago(x)
+    days_back = 30
     until start_date > Date.today
       workout = user.workouts.create({
                                          :day => start_date
                                      })
-      SeedLibrary.exercise_sets_for workout
+      SeedLibrary.exercise_sets_for workout, days_back
       start_date = start_date.next_day
+      days_back -= 1
     end
 
   end
 
-  def self.exercise_sets_for workout
+  def self.exercise_sets_for workout, days_back
+    multiplier = 1 + 0.05*(30-days_back)
     6.times do
       exercise = Exercise.find_by_id(rand(873))
       rand(7).times do
@@ -37,8 +40,8 @@ module SeedLibrary
                                               secondary_muscles: exercise.secondary_muscles,
                                               muscle_category: exercise.muscle_category,
                                               name: exercise.name,
-                                              reps: (rand(10) + 1),
-                                              weight: (rand(100) + 10),
+                                              reps: ((rand(5) + 1)*multiplier).round,
+                                              weight: ((rand(50) + 10*multiplier)).round,
                                               duration: 0
 
                                           })

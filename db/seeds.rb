@@ -9,7 +9,7 @@ require_relative 'SeedLibrary'
 
 SeedLibrary.clear_seeds
 #User.create({ :email => 'ianphorsman@gmail.com', :password => 'herpderp' })
-SeedLibrary.mock_workouts_for('ianphorsman@gmail.com', 3)
+SeedLibrary.mock_workouts_for('ianphorsman@gmail.com', 30)
 # Deletes all rows from the Users, ExerciseSets, and Workouts table, but keeps the Exercise rows.
 <<-eof
 

@@ -55,7 +55,7 @@ var WorkoutContainer = React.createClass({
 
         var options = {
             segmentShowStroke: false,
-            animateScale: true
+            animation: false
         };
 
         var pieChart = new Chart(plotLocation, {

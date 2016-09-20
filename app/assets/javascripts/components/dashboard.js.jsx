@@ -30,7 +30,7 @@ var Dashboard = React.createClass({
 
     panel: function(muscleCategory) {
         return (
-            <div data-muscle-group={muscleCategory.muscle_category} className="panel panel-default col-xs-offset-3 col-xs-6">
+            <div data-muscle-group={muscleCategory.muscle_category} className="panel panel-default col-xs-12 col-sm-6 col-sm-offset-3">
                 <section className="panel-heading" role="tab" id={"heading-" + muscleCategory.muscle_category}>
                     <h4 className="panel-title">
                         <a role="button" className="collapsed" data-toggle="collapse" data-parent="#dashboard-accordion" href={"#" + muscleCategory.muscle_category} aria-expanded="false" aria-controls={muscleCategory.muscle_category}>
@@ -69,6 +69,7 @@ var Dashboard = React.createClass({
           this.breakdown();
           return(
               <section id="dashboard-accordion" className="panel-group row" role="tablist" aria-multiselectable="true">
+                  <h4 className="col-xs-12 col-sm-6 col-sm-offset-3">Overall Breakdown</h4>
                 {this.props.user.stats_by_muscle_category.map(this.panel)}
               </section>
           );

@@ -15,7 +15,12 @@ var Dashboard = React.createClass({
                 borderColor: "rgb(26, 26, 26)"
             }]
         };
-        var options = { animation: false };
+        var options = {
+            animation: false,
+            legend: {
+                display: false
+            }
+        };
         var pieChart = new Chart(plotLocation, {
             type: 'doughnut',
             data: data,

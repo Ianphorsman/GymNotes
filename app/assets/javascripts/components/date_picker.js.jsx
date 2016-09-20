@@ -8,13 +8,13 @@ var DatePicker = React.createClass({
             <table>
                 <thead>
                     <tr>
-                        <th onClick={this.props.prevMonth.bind(this)}>{this.props.datePickerData['prevMonth']}</th>
+                        <th className="month-selector" onClick={this.props.prevMonth.bind(this)}>{this.props.datePickerData['prevMonth']}</th>
                         <th></th>
                         <th></th>
-                        <th>{this.props.datePickerData['month']}</th>
+                        <th className="month-selected">{this.props.datePickerData['month']}</th>
                         <th></th>
                         <th></th>
-                        <th onClick={this.props.nextMonth.bind(this)}>{this.props.datePickerData['nextMonth']}</th>
+                        <th className="month-selector" onClick={this.props.nextMonth.bind(this)}>{this.props.datePickerData['nextMonth']}</th>
                     </tr>
                     <tr>
                         <th>Mon</th>

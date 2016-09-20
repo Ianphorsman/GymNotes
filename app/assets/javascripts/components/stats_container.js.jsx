@@ -86,6 +86,9 @@ var StatsContainer = React.createClass({
                   display: true,
                   text: this.props.stats.attributes.title
               },
+              legend: {
+                  display: false
+              },
               scales: {
                   xAxes: [{
                       type: 'time',

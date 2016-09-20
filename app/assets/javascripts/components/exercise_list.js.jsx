@@ -8,10 +8,7 @@ var ExerciseList = React.createClass({
                   <form className="form-horizontal new_exercise_set" id="new_exercise_set"
                         action="/exercise_sets/create" method="POST">
                       <div className="form-group col-xs-12">
-                          <select id="exercise_name" name="exercise_name" className="form-control">
-                              <option value>Select An Exercise...</option>
-                              {Object.keys(this.props.exercises).map(listMuscleGroups)}
-                          </select>
+                          <button id="exercise_name" type="button" className="form-control" onClick={this.props.setModalComponent.bind(this, 'getExerciseSelection')}>Select an exercise...</button>
                       </div>
                       <div className="form-group col-xs-6">
                           <input className="form-control" id="reps" type="text" name="reps" placeholder="Reps"/>

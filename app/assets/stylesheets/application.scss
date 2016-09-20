@@ -3,17 +3,17 @@
 
 /* colors */
 
-$honey: #d9bf2b;
+$honey: #ffc107;
 $cranberry: #d92b4b;
-$olive-green: #607625;
-$midnight-blue: #036;
-$pumpkin: #d96e2b;
-$grape: #613cb3;
-$spring-green: #a2c83c;
+$olive-green: #8bc34a;
+$midnight-blue: #03a9f4;
+$pumpkin: #ff9800;
+$grape: #673ab7;
+$spring-green: #3f51b5;
 $wafer: #e1d7d2;
 $yellow: #b7b327;
-$skyblue: #5db1e9;
-$storm-blue: #255c76;
+$skyblue: #2196f3;
+$storm-blue: #f44336;
 
 
 
@@ -42,6 +42,10 @@ $storm-blue: #255c76;
       visibility: visible;
     }
   }
+}
+
+.mobile-text {
+  font-size: 0.9rem;
 }
 
 #stats-form {

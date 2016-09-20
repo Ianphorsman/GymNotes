@@ -10,12 +10,12 @@ var WorkoutContainer = React.createClass({
             if (this.props.forMobile) {
                 return(
                     <div className="progress col-xs-12">
-                        <h5 data-workout-focus>{this.props.workoutData['stats_for_workout']['focus']} Workout</h5>
+                        <h5 data-workout-focus className="mobile-text">{this.props.workoutData['stats_for_workout']['focus']} Workout</h5>
                         <div className="progress-bar" data-workout-progress
                              data-muscle-group={this.props.workoutData['stats_for_workout']['focus']} role="progressbar"
                              aria-valuenow={work} aria-valuemin="0" aria-valuemax={maxWidth} style={barWidthProp}></div>
                         <div className="divider"></div>
-                        <span className="date">{this.props.workoutData['date']}</span>
+                        <span className="date mobile-text">{this.props.workoutData['date']}</span>
                         <span className="badge" data-percent-progress>{relativeProgress}</span>
                     </div>
                 );

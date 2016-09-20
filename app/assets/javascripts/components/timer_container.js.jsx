@@ -20,9 +20,9 @@ var TimerContainer = React.createClass({
 
     display: function() {
         if (this.state.context == 'timing') {
-            return <button type="button" className="col-xs-6" onClick={this.stopTimer.bind(this)}>Stop</button>;
+            return <button type="button" id="timer-toggle" className="col-xs-6" onClick={this.stopTimer.bind(this)}>Stop</button>;
         } else if (this.state.context == 'stopped') {
-            return <button type="button" className="col-xs-6" onClick={this.startTimer.bind(this)}>Start</button>;
+            return <button type="button" id="timer-toggle" className="col-xs-6" onClick={this.startTimer.bind(this)}>Start</button>;
         }
     },
 

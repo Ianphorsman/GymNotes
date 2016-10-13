@@ -17,17 +17,17 @@ var StatsForm = React.createClass({
     workouts: function() {
         return(
             <div className="row">
-                <label className="form-group col-xs-6"><span className="form-control">How many days back to analyze?</span></label>
+                <label className="form-group col-xs-10"><span className="form-control">How many days back to analyze?</span></label>
                 <div className="form-group col-xs-2">
                     <input className="form-control" id="workouts" type="text" name="workouts" placeholder="7" defaultValue="7" />
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <select id="volume_strength" className="form-control">
                         <option value="volume">Volume</option>
                         <option value="strength">Strength</option>
                     </select>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <button className="form-control" type="button" onClick={this.props.requestStats.bind(this, this.getRoute.bind(this))}>Analyze</button>
                 </div>
             </div>
@@ -37,7 +37,7 @@ var StatsForm = React.createClass({
     muscle_group: function() {
         return(
             <div className="row">
-                <div className="form-group col-xs-8">
+                <div className="form-group col-xs-12">
                     <select className="form-control" id="muscle_group" name="muscle_group">
                         <option value>Select a Muscle Group...</option>
                         <option value="Abdominals">Abs</option>
@@ -59,13 +59,13 @@ var StatsForm = React.createClass({
                         <option value="Triceps">Triceps</option>
                     </select>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <select className="form-control" id="volume_strength" name="volume_strength">
                         <option value="volume">Volume</option>
                         <option value="strength">Strength</option>
                     </select>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <button className="form-control" type="button" onClick={this.props.requestStats.bind(this, this.getRoute.bind(this))}>Analyze</button>
                 </div>
             </div>
@@ -75,7 +75,7 @@ var StatsForm = React.createClass({
     muscle_category: function() {
         return(
             <div className="row">
-                <div className="form-group col-xs-8">
+                <div className="form-group col-xs-12">
                     <select className="form-control" id="muscle_category" name="muscle_category">
                         <option value>Select a Muscle Category...</option>
                         <option value="Abs">Abs</option>
@@ -87,13 +87,13 @@ var StatsForm = React.createClass({
                         <option value="Shoulders">Shoulders</option>
                     </select>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <select className="form-control" name="volume_strength" id="volume_strength">
                         <option value="volume">Volume</option>
                         <option value="strength">Strength</option>
                     </select>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <button className="form-control" type="button" onClick={this.props.requestStats.bind(this, this.getRoute.bind(this))}>Analyze</button>
                 </div>
             </div>
@@ -103,7 +103,7 @@ var StatsForm = React.createClass({
     exercise: function() {
         return(
             <div className="row">
-                <div className="col-xs-8">
+                <div className="col-xs-12">
                     <div className="row">
                         <div className="form-group col-xs-6">
                             <ExerciseSelection exercises={this.props.exercises} narrowSelection={this.props.narrowSelection} selectExercise={this.selectExercise}></ExerciseSelection>
@@ -113,13 +113,13 @@ var StatsForm = React.createClass({
                         </div>
                     </div>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <select className="form-control" name="volume_strength" id="volume_strength">
                         <option value="volume">Volume</option>
                         <option value="strength">Strength</option>
                     </select>
                 </div>
-                <div className="form-group col-xs-2">
+                <div className="form-group col-xs-6">
                     <button className="form-control" type="button" onClick={this.props.requestStats.bind(this, this.getRoute.bind(this))}>Analyze</button>
                 </div>
             </div>

@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
     if w
       w.focus[0]
     else
-      "None"
+      ""
     end
   end
 

@@ -74,6 +74,7 @@ a, .list-group-item {
     cursor: pointer;
   }
 }
+
 input {
   text-indent: 1rem;
 }
@@ -89,6 +90,10 @@ i {
   }
 }
 
+h4 {
+  color: $wafer;
+}
+
 button {
   background-color: transparent;
   outline: none;
@@ -99,13 +104,16 @@ button {
     text-shadow: none;
   }
 }
+
 .grey {
   color: mix($wafer, $gray-dark);
   font-size: 0.8rem;
 }
+
 .workout-component {
   margin-top: 1rem;
 }
+
 .month-selector {
   cursor: pointer;
   color: mix($gray-dark, $wafer);
@@ -114,10 +122,12 @@ button {
     color: white;
   }
 }
+
 .month-selected {
   color: white;
   font-size: 1.15rem;
 }
+
 /* navbar */
 
 .navbar {
